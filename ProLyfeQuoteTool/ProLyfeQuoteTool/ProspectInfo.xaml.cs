@@ -118,7 +118,7 @@ namespace ProLyfeQuoteTool
                 //create new record
             }
 
-            QuoteRequest QuotePage = new QuoteRequest();
+            QuoteRequest QuotePage = new QuoteRequest(prospectID);
             this.NavigationService.Navigate(QuotePage);
         }
     }

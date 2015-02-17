@@ -74,3 +74,6 @@ C:\Users\SmashedCrabNez\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj
 C:\Users\SmashedCrabNez\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\ProLyfeQuoteTool.csproj.GenerateResource.Cache
 C:\Users\SmashedCrabNez\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\ProLyfeQuoteTool.exe
 C:\Users\SmashedCrabNez\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\ProLyfeQuoteTool.pdb
+C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\bin\Debug\ProLyfeQuoteTool.exe.config
+C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\ProLyfeQuoteTool.exe
+C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\ProLyfeQuoteTool.pdb

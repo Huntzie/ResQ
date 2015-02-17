@@ -7,7 +7,16 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="BillingInfo">
 
-    <Grid Background="White">
-        
+    <Grid Background="White" Margin="0,0,-189,0">
+        <Label Content="Billing Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Sort Code" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="144"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Account Number" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="144"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Account Name" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Width="144"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="400,270,-175,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
+        <Button Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
+
     </Grid>
 </Page>
