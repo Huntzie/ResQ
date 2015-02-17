@@ -5,18 +5,25 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="QuoteRequest" Background="White">
+	Title="QuoteRequest" Background="White" Name="p_Request">
 
-    <Grid>
+    <Grid>       
         <Label Content="Quote Request" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Dress Cost" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="94,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_dressCost" HorizontalAlignment="Left" Height="23" Margin="94,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent">
+            <TextBox.ToolTip>
+                <ToolTip Name="tt_dressCostTB"> 
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold">Can only contain numbers</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
         <Label Content="Venue Cost" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="94,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb_venueCost" HorizontalAlignment="Left" Height="23" Margin="94,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
         <Label Content="Catering Cost" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="94,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Next" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
-        <Button Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
-
+        <TextBox x:Name="tb_cateringCost" HorizontalAlignment="Left" Height="23" Margin="94,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
+        <Button x:Name="b_quoteReqNext" Content="Next" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqNext_Click"/>
+        <Button x:Name="b_QuoteReqPrevious" Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqPrevious"/>
     </Grid>
 </Page>
