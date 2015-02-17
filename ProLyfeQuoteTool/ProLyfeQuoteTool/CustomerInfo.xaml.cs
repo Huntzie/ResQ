@@ -30,7 +30,7 @@ namespace ProLyfeQuoteTool
 
             leadAdapter = new DataSet1TableAdapters.LeadTableAdapter();
             vw_custInfoAdapter = new DataSet1TableAdapters.vw_CustomerInfoTableAdapter();
-
+            
             args = Environment.GetCommandLineArgs();
             int leadID= int.Parse(args[4]);
             Name.Text = (string)leadAdapter.GetNameByID(leadID);
@@ -40,7 +40,7 @@ namespace ProLyfeQuoteTool
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ProspectInfo prospectPage = new ProspectInfo(args[4]);
+            ProspectInfo prospectPage = new ProspectInfo();
             this.NavigationService.Navigate(prospectPage);
         }
     }
