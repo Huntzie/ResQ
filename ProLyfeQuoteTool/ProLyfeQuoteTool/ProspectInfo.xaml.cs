@@ -102,7 +102,12 @@ namespace ProLyfeQuoteTool
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(FirstName.Text) || string.IsNullOrWhiteSpace(LastName.Text) || string.IsNullOrWhiteSpace(HomeNumber.Text) ||
+                string.IsNullOrWhiteSpace(WorkNumber.Text) || string.IsNullOrWhiteSpace(MobileNumber.Text))
+            {
+                Warning.Visibility = Visibility.Visible;
+                return;
+            }
 
             if (ProspectRecord)
             {

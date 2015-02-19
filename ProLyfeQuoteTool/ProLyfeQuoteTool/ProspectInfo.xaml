@@ -34,6 +34,6 @@
         <TextBox x:Name="FullName" HorizontalAlignment="Left" Height="23" Margin="314,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="161"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="314,76,0,0" VerticalAlignment="Top" Width="161"/>
         <DatePicker x:Name ="DOB" HorizontalAlignment="Left" Margin="159,106,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <Label x:Name="Warning" Content="! Please fill in all boxes" HorizontalAlignment="Left" Margin="159,239,0,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
     </Grid>
 </Page>

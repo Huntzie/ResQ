@@ -22,6 +22,7 @@ namespace ProLyfeQuoteTool
     {
         int ProspectID;
         DataSet1TableAdapters.AddressTableAdapter AdrTableAdapter;
+        DataSet1TableAdapters.Ref_AddressTypeTableAdapter addressTypeAdapter;
 
         public CollectAddress(int p_ProspectID)
         {
@@ -29,13 +30,25 @@ namespace ProLyfeQuoteTool
 
             ProspectID = p_ProspectID;
             AdrTableAdapter = new DataSet1TableAdapters.AddressTableAdapter();
-            
+            addressTypeAdapter = new DataSet1TableAdapters.Ref_AddressTypeTableAdapter();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            AddType.ItemsSource = addressTypeAdapter.GetTypes();
+            AddType.DisplayMemberPath = "Type";
         }
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(Line1.Text) || string.IsNullOrWhiteSpace(Line2.Text) || string.IsNullOrWhiteSpace(PostCode.Text))
+            {
+                Warning.Visibility = Visibility.Visible;
+                return;
+            }
 
-            AdrTableAdapter.InsertQuery(ProspectID, AddType.SelectedIndex, Line1.Text, Line2.Text, PostCode.Text);
+            int addTypeID = (int)addressTypeAdapter.GetIdByType((string)AddType.SelectedItem);
+            AdrTableAdapter.InsertQuery(ProspectID, addTypeID, Line1.Text, Line2.Text, PostCode.Text);
             this.NavigationService.Navigate(new BillingInfo(ProspectID));
             //store address
         }

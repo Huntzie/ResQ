@@ -9,7 +9,7 @@
 
     <Grid>
         <Label Content="Quote" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="215,264,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="215,264,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button x:Name="b_returnToRequest" Content="Requote" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top" Width="75" Click="b_returnToRequest_Click"/>
         <Label Content="Premium Per Month:" HorizontalAlignment="Left" Margin="37,83,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="PPM" HorizontalAlignment="Left" Height="23" Margin="161,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
