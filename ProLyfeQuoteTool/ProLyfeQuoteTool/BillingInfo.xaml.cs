@@ -52,14 +52,17 @@ namespace ProLyfeQuoteTool
         {
             if (BillingRecord)
             {
-                billingTableAdapter.UpdateQuery(int.Parse(AccNum.Text), AccName.Text, int.Parse(SortCode.Text), prospectID, prospectID);
+                billingTableAdapter.UpdateQuery(int.Parse(AccNum.Text), AccName.Text, int.Parse(SortCode.Text), billingID, billingID);
                 //Update Record
             }
             else
             {
-                billingTableAdapter.UpdateQuery(int.Parse(AccNum.Text), AccName.Text, int.Parse(SortCode.Text), prospectID, prospectID);
+                billingTableAdapter.InsertQuery(prospectID, int.Parse(AccNum.Text), AccName.Text, int.Parse(SortCode.Text));
             }
 
+
+            SaleComplete SalesPage = new SaleComplete(prospectID);
+            this.NavigationService.Navigate(SalesPage);
         }
 
         private void Button_Click1(object sender, RoutedEventArgs e)

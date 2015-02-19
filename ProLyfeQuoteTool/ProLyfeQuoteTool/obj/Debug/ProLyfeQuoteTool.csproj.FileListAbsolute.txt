@@ -105,3 +105,5 @@ C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\Pr
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\ProLyfeQuoteTool.csproj.GenerateResource.Cache
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\CollectAddress.baml
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\CollectAddress.g.cs
+C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\SaleComplete.baml
+C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\SaleComplete.g.cs

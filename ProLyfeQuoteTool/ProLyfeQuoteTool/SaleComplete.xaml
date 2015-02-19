@@ -1,13 +1,46 @@
-﻿<Page x:Class="ProLyfeQuoteTool.SaleComplete"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="SaleComplete">
+      xmlns:local="clr-namespace:ProLyfeQuoteTool" x:Class="ProLyfeQuoteTool.SaleComplete" 
+      mc:Ignorable="d"
+	Title="SaleComplete" Height="353.023" Width="601.395">
 
-    <Grid>
-        
+    <Page.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="purchaseViewViewSource" Source="{Binding PurchaseView, Source={StaticResource dataSet1}}"/>
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource purchaseViewViewSource}">
+
+        <DataGrid x:Name="purchaseViewDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="firstNameColumn" Width="SizeToHeader" Header="First Name" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn x:Name="lastNameColumn" Width="SizeToHeader" Header="Last Name" Binding="{Binding LastName}"/>
+                <DataGridTemplateColumn x:Name="dOBColumn" Width="SizeToHeader" Header="DOB">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DOB, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="premiumPerMonthColumn" Width="SizeToHeader" Header="Premium Per Month" Binding="{Binding PremiumPerMonth}"/>
+                <DataGridTemplateColumn x:Name="startDateColumn" Width="SizeToHeader" Header="Start Date">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="line1Column" Width="SizeToHeader" Header="Line 1" Binding="{Binding Line1}"/>
+                <DataGridTextColumn x:Name="line2Column" Width="SizeToHeader" Header="Line 2" Binding="{Binding Line2}"/>
+                <DataGridTextColumn x:Name="postcodeColumn" Width="SizeToHeader" Header="Postcode" Binding="{Binding Postcode}"/>
+                <DataGridTextColumn x:Name="accountNumColumn" Width="SizeToHeader" Header="Account Num" Binding="{Binding AccountNum}"/>
+                <DataGridTextColumn x:Name="accountNameColumn" Width="SizeToHeader" Header="Account Name" Binding="{Binding AccountName}"/>
+                <DataGridTextColumn x:Name="sortCodeColumn" Width="SizeToHeader" Header="Sort Code" Binding="{Binding SortCode}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>

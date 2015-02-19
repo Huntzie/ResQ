@@ -113,6 +113,17 @@ namespace ProLyfeQuoteTool
             {
                 prospectTableAdapter.UpdateQuery(FirstName.Text, LastName.Text, DOB.DisplayDate, prospectID, prospectID);
                 //Update Record
+
+                if (ContactRecord)
+                {
+                    contactTableAdapter.UpdateQuery1(int.Parse(HomeNumber.Text), int.Parse(MobileNumber.Text), int.Parse(WorkNumber.Text), contactID, contactID);
+                    //Update Record
+                }
+                else
+                {
+                    contactTableAdapter.InsertQuery(prospectID, int.Parse(HomeNumber.Text), int.Parse(MobileNumber.Text), int.Parse(WorkNumber.Text));
+
+                }
             }
             else
             {

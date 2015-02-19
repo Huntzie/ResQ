@@ -31,6 +31,16 @@ namespace ProLyfeQuoteTool
             ProspectID = p_ProspectID;
             AdrTableAdapter = new DataSet1TableAdapters.AddressTableAdapter();
             addressTypeAdapter = new DataSet1TableAdapters.Ref_AddressTypeTableAdapter();
+            DataSet1.AddressDataTable DataTable;
+           
+            DataTable = AdrTableAdapter.GetDataByProspectID(ProspectID);
+
+            Line1.Text = DataTable.Line1Column.ToString();
+
+            Line2.Text = DataTable.Line2Column.ToString();
+
+            PostCode.Text = DataTable.PostcodeColumn.ToString();
+            
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)

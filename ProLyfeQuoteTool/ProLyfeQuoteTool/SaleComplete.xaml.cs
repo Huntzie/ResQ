@@ -20,9 +20,22 @@ namespace ProLyfeQuoteTool
     /// </summary>
     public partial class SaleComplete : Page
     {
-        public SaleComplete()
+
+        DataSet1TableAdapters.PurchaseViewTableAdapter purchaseViewAdapter;
+
+        public SaleComplete(int ProspectID)
         {
             InitializeComponent();
+
+            purchaseViewAdapter = new DataSet1TableAdapters.PurchaseViewTableAdapter();
+
+
+
+            ProLyfeQuoteTool.DataSet1 DataSet = ((ProLyfeQuoteTool.DataSet1)(this.FindResource("dataSet1")));
+
+            purchaseViewAdapter.Fill(DataSet.PurchaseView, ProspectID);
+            
+
         }
     }
 }
