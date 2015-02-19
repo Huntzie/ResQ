@@ -1,29 +1,42 @@
-﻿<Page x:Class="ProLyfeQuoteTool.QuoteRequest"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="QuoteRequest" Background="White" Name="p_Request">
+      xmlns:local="clr-namespace:ProLyfeQuoteTool" x:Class="ProLyfeQuoteTool.QuoteRequest"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"    
+      mc:Ignorable="d" d:DesignWidth="493"
+	Title="QuoteRequest" Background="White" x:Name="p_Request" Height="341">
 
-    <Grid>       
+    <Page.Resources>
+        <local:DataSet1 x:Key="dataSet1" />
+        <CollectionViewSource x:Key="vw_QuoteViewSource" Source="{Binding vw_Quote, Source={StaticResource dataSet1}}"/>
+        <CollectionViewSource x:Key="quotesViewSource" Source="{Binding Quotes, Source={StaticResource dataSet1}}"/>
+    </Page.Resources>
+
+    <Grid Margin="10,10,10,10" DataContext="{StaticResource vw_QuoteViewSource}">
         <Label Content="Quote Request" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dress Cost" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_dressCost" HorizontalAlignment="Left" Height="23" Margin="94,65,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent">
-            <TextBox.ToolTip>
-                <ToolTip Name="tt_dressCostTB"> 
-                    <StackPanel>
-                        <TextBlock FontWeight="Bold">Can only contain numbers</TextBlock>
-                    </StackPanel>
-                </ToolTip>
-            </TextBox.ToolTip>
+        <Label Content="Dress Cost" HorizontalAlignment="Left" Margin="12,43,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_dressCost" HorizontalAlignment="Left" Height="23" Margin="96,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent">           
         </TextBox>
-        <Label Content="Venue Cost" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_venueCost" HorizontalAlignment="Left" Height="23" Margin="94,107,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
-        <Label Content="Catering Cost" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_cateringCost" HorizontalAlignment="Left" Height="23" Margin="94,149,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
-        <Button x:Name="b_quoteReqNext" Content="Next" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqNext_Click"/>
-        <Button x:Name="b_QuoteReqPrevious" Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqPrevious"/>
+        <Label Content="Venue Cost" Margin="12,71,0,0" HorizontalAlignment="Left" Width="70" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_venueCost" HorizontalAlignment="Left" Height="23" Margin="96,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
+        <Label Content="Catering Cost" HorizontalAlignment="Left" Margin="12,99,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_cateringCost" HorizontalAlignment="Left" Height="23" Margin="96,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
+        <Button x:Name="b_quoteReqQuote" Content="Quote" HorizontalAlignment="Left" Margin="266,99,0,0" VerticalAlignment="Top" Width="155" Click="b_quoteReqQuote_Click"/>
+        <Button x:Name="b_QuoteReqPrevious" Content="Previous" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqPrevious"/>
+        <Button Name="b_goPurchase" Content="Go to Purchase" HorizontalAlignment="Left" Margin="363,291,0,0" VerticalAlignment="Top" Width="98" Click="b_goPurchase_Click"/>
+        <DatePicker Name="dtp_startDate" HorizontalAlignment="Left" Margin="338,47,0,0" VerticalAlignment="Top" Width="123" SelectedDateChanged="dtp_startDate_SelectedDateChanged" DisplayDateStart="{x:Static sys:DateTime.Now}" DisplayDate="{x:Static sys:DateTime.Now}"/>
+        <Label Content="Payment Start Date" HorizontalAlignment="Left" Margin="221,45,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="quotesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource quotesViewSource}}" Margin="10,131,0,35" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" HorizontalAlignment="Left" Width="451">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="SizeToHeader"/>                
+                <DataGridTextColumn x:Name="dressCostColumn" Binding="{Binding DressCost}" Header="Dress Cost" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="venueCostColumn" Binding="{Binding VenueCost}" Header="Venue Cost" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="cateringCostColumn" Binding="{Binding CateringCost}" Header="Catering Cost" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="monthlyPremiumColumn" Binding="{Binding MonthlyPremium}" Header="Monthly Premium" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="startDateColumn" Header="Start Date" Width="SizeToHeader" Binding="{Binding StartDate, StringFormat=d}"/>                
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

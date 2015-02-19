@@ -44,6 +44,10 @@ namespace ProLyfeQuoteTool {
         
         private vw_CustomerInfoDataTable tablevw_CustomerInfo;
         
+        private vw_QuoteDataTable tablevw_Quote;
+        
+        private QuotesDataTable tableQuotes;
+        
         private PurchaseViewDataTable tablePurchaseView;
         
         private global::System.Data.DataRelation relationFK_Address_Prospect;
@@ -58,11 +62,15 @@ namespace ProLyfeQuoteTool {
         
         private global::System.Data.DataRelation relationFK_QuoteRequest_Prospect1;
         
-        private global::System.Data.DataRelation relationFK_PurchasedPolicy_QuoteResponse;
-        
         private global::System.Data.DataRelation relationFK_QuoteResponse_QuoteRequest;
         
         private global::System.Data.DataRelation relationFK_Address_Ref_AddressType;
+        
+        private global::System.Data.DataRelation relationFK_PurchasedPolicy_QuoteResponse;
+        
+        private global::System.Data.DataRelation relationFK_PurchasedPolicy_Quotes;
+        
+        private global::System.Data.DataRelation relationFK_Quotes_Prospect;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -121,6 +129,12 @@ namespace ProLyfeQuoteTool {
                 }
                 if ((ds.Tables["vw_CustomerInfo"] != null)) {
                     base.Tables.Add(new vw_CustomerInfoDataTable(ds.Tables["vw_CustomerInfo"]));
+                }
+                if ((ds.Tables["vw_Quote"] != null)) {
+                    base.Tables.Add(new vw_QuoteDataTable(ds.Tables["vw_Quote"]));
+                }
+                if ((ds.Tables["Quotes"] != null)) {
+                    base.Tables.Add(new QuotesDataTable(ds.Tables["Quotes"]));
                 }
                 if ((ds.Tables["PurchaseView"] != null)) {
                     base.Tables.Add(new PurchaseViewDataTable(ds.Tables["PurchaseView"]));
@@ -247,6 +261,26 @@ namespace ProLyfeQuoteTool {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vw_QuoteDataTable vw_Quote {
+            get {
+                return this.tablevw_Quote;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public QuotesDataTable Quotes {
+            get {
+                return this.tableQuotes;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public PurchaseViewDataTable PurchaseView {
             get {
                 return this.tablePurchaseView;
@@ -350,6 +384,12 @@ namespace ProLyfeQuoteTool {
                 if ((ds.Tables["vw_CustomerInfo"] != null)) {
                     base.Tables.Add(new vw_CustomerInfoDataTable(ds.Tables["vw_CustomerInfo"]));
                 }
+                if ((ds.Tables["vw_Quote"] != null)) {
+                    base.Tables.Add(new vw_QuoteDataTable(ds.Tables["vw_Quote"]));
+                }
+                if ((ds.Tables["Quotes"] != null)) {
+                    base.Tables.Add(new QuotesDataTable(ds.Tables["Quotes"]));
+                }
                 if ((ds.Tables["PurchaseView"] != null)) {
                     base.Tables.Add(new PurchaseViewDataTable(ds.Tables["PurchaseView"]));
                 }
@@ -446,6 +486,18 @@ namespace ProLyfeQuoteTool {
                     this.tablevw_CustomerInfo.InitVars();
                 }
             }
+            this.tablevw_Quote = ((vw_QuoteDataTable)(base.Tables["vw_Quote"]));
+            if ((initTable == true)) {
+                if ((this.tablevw_Quote != null)) {
+                    this.tablevw_Quote.InitVars();
+                }
+            }
+            this.tableQuotes = ((QuotesDataTable)(base.Tables["Quotes"]));
+            if ((initTable == true)) {
+                if ((this.tableQuotes != null)) {
+                    this.tableQuotes.InitVars();
+                }
+            }
             this.tablePurchaseView = ((PurchaseViewDataTable)(base.Tables["PurchaseView"]));
             if ((initTable == true)) {
                 if ((this.tablePurchaseView != null)) {
@@ -458,9 +510,11 @@ namespace ProLyfeQuoteTool {
             this.relationFK_Prospect_Lead = this.Relations["FK_Prospect_Lead"];
             this.relationFK_PurchasedPolicy_Prospect = this.Relations["FK_PurchasedPolicy_Prospect"];
             this.relationFK_QuoteRequest_Prospect1 = this.Relations["FK_QuoteRequest_Prospect1"];
-            this.relationFK_PurchasedPolicy_QuoteResponse = this.Relations["FK_PurchasedPolicy_QuoteResponse"];
             this.relationFK_QuoteResponse_QuoteRequest = this.Relations["FK_QuoteResponse_QuoteRequest"];
             this.relationFK_Address_Ref_AddressType = this.Relations["FK_Address_Ref_AddressType"];
+            this.relationFK_PurchasedPolicy_QuoteResponse = this.Relations["FK_PurchasedPolicy_QuoteResponse"];
+            this.relationFK_PurchasedPolicy_Quotes = this.Relations["FK_PurchasedPolicy_Quotes"];
+            this.relationFK_Quotes_Prospect = this.Relations["FK_Quotes_Prospect"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,6 +545,10 @@ namespace ProLyfeQuoteTool {
             base.Tables.Add(this.tableRef_AddressType);
             this.tablevw_CustomerInfo = new vw_CustomerInfoDataTable();
             base.Tables.Add(this.tablevw_CustomerInfo);
+            this.tablevw_Quote = new vw_QuoteDataTable();
+            base.Tables.Add(this.tablevw_Quote);
+            this.tableQuotes = new QuotesDataTable();
+            base.Tables.Add(this.tableQuotes);
             this.tablePurchaseView = new PurchaseViewDataTable();
             base.Tables.Add(this.tablePurchaseView);
             this.relationFK_Address_Prospect = new global::System.Data.DataRelation("FK_Address_Prospect", new global::System.Data.DataColumn[] {
@@ -517,10 +575,6 @@ namespace ProLyfeQuoteTool {
                         this.tableProspect.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableQuoteRequest.ProspectIDColumn}, false);
             this.Relations.Add(this.relationFK_QuoteRequest_Prospect1);
-            this.relationFK_PurchasedPolicy_QuoteResponse = new global::System.Data.DataRelation("FK_PurchasedPolicy_QuoteResponse", new global::System.Data.DataColumn[] {
-                        this.tableQuoteResponse.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePurchasedPolicy.QuoteRespIDColumn}, false);
-            this.Relations.Add(this.relationFK_PurchasedPolicy_QuoteResponse);
             this.relationFK_QuoteResponse_QuoteRequest = new global::System.Data.DataRelation("FK_QuoteResponse_QuoteRequest", new global::System.Data.DataColumn[] {
                         this.tableQuoteRequest.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableQuoteResponse.QuoteReqIDColumn}, false);
@@ -529,6 +583,18 @@ namespace ProLyfeQuoteTool {
                         this.tableRef_AddressType.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAddress.AddressTypeIDColumn}, false);
             this.Relations.Add(this.relationFK_Address_Ref_AddressType);
+            this.relationFK_PurchasedPolicy_QuoteResponse = new global::System.Data.DataRelation("FK_PurchasedPolicy_QuoteResponse", new global::System.Data.DataColumn[] {
+                        this.tableQuoteResponse.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePurchasedPolicy.QuoteIDColumn}, false);
+            this.Relations.Add(this.relationFK_PurchasedPolicy_QuoteResponse);
+            this.relationFK_PurchasedPolicy_Quotes = new global::System.Data.DataRelation("FK_PurchasedPolicy_Quotes", new global::System.Data.DataColumn[] {
+                        this.tableQuotes.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePurchasedPolicy.QuoteIDColumn}, false);
+            this.Relations.Add(this.relationFK_PurchasedPolicy_Quotes);
+            this.relationFK_Quotes_Prospect = new global::System.Data.DataRelation("FK_Quotes_Prospect", new global::System.Data.DataColumn[] {
+                        this.tableProspect.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableQuotes.ProspectIDColumn}, false);
+            this.Relations.Add(this.relationFK_Quotes_Prospect);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -588,6 +654,18 @@ namespace ProLyfeQuoteTool {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializevw_CustomerInfo() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializevw_Quote() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeQuotes() {
             return false;
         }
         
@@ -681,6 +759,12 @@ namespace ProLyfeQuoteTool {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void vw_CustomerInfoRowChangeEventHandler(object sender, vw_CustomerInfoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void vw_QuoteRowChangeEventHandler(object sender, vw_QuoteRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void QuotesRowChangeEventHandler(object sender, QuotesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PurchaseViewRowChangeEventHandler(object sender, PurchaseViewRowChangeEvent e);
@@ -2397,11 +2481,11 @@ namespace ProLyfeQuoteTool {
             
             private global::System.Data.DataColumn columnProspectID;
             
-            private global::System.Data.DataColumn columnQuoteRespID;
-            
             private global::System.Data.DataColumn columnSaleDate;
             
             private global::System.Data.DataColumn columnINSERTSTAMP;
+            
+            private global::System.Data.DataColumn columnQuoteID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2454,14 +2538,6 @@ namespace ProLyfeQuoteTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn QuoteRespIDColumn {
-                get {
-                    return this.columnQuoteRespID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SaleDateColumn {
                 get {
                     return this.columnSaleDate;
@@ -2473,6 +2549,14 @@ namespace ProLyfeQuoteTool {
             public global::System.Data.DataColumn INSERTSTAMPColumn {
                 get {
                     return this.columnINSERTSTAMP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuoteIDColumn {
+                get {
+                    return this.columnQuoteID;
                 }
             }
             
@@ -2513,19 +2597,19 @@ namespace ProLyfeQuoteTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PurchasedPolicyRow AddPurchasedPolicyRow(ProspectRow parentProspectRowByFK_PurchasedPolicy_Prospect, QuoteResponseRow parentQuoteResponseRowByFK_PurchasedPolicy_QuoteResponse, System.DateTime SaleDate, System.DateTime INSERTSTAMP) {
+            public PurchasedPolicyRow AddPurchasedPolicyRow(ProspectRow parentProspectRowByFK_PurchasedPolicy_Prospect, System.DateTime SaleDate, System.DateTime INSERTSTAMP, QuoteResponseRow parentQuoteResponseRowByFK_PurchasedPolicy_QuoteResponse) {
                 PurchasedPolicyRow rowPurchasedPolicyRow = ((PurchasedPolicyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null,
                         SaleDate,
-                        INSERTSTAMP};
+                        INSERTSTAMP,
+                        null};
                 if ((parentProspectRowByFK_PurchasedPolicy_Prospect != null)) {
                     columnValuesArray[1] = parentProspectRowByFK_PurchasedPolicy_Prospect[0];
                 }
                 if ((parentQuoteResponseRowByFK_PurchasedPolicy_QuoteResponse != null)) {
-                    columnValuesArray[2] = parentQuoteResponseRowByFK_PurchasedPolicy_QuoteResponse[0];
+                    columnValuesArray[4] = parentQuoteResponseRowByFK_PurchasedPolicy_QuoteResponse[0];
                 }
                 rowPurchasedPolicyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPurchasedPolicyRow);
@@ -2558,9 +2642,9 @@ namespace ProLyfeQuoteTool {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnProspectID = base.Columns["ProspectID"];
-                this.columnQuoteRespID = base.Columns["QuoteRespID"];
                 this.columnSaleDate = base.Columns["SaleDate"];
                 this.columnINSERTSTAMP = base.Columns["INSERTSTAMP"];
+                this.columnQuoteID = base.Columns["QuoteID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2570,12 +2654,12 @@ namespace ProLyfeQuoteTool {
                 base.Columns.Add(this.columnID);
                 this.columnProspectID = new global::System.Data.DataColumn("ProspectID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProspectID);
-                this.columnQuoteRespID = new global::System.Data.DataColumn("QuoteRespID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuoteRespID);
                 this.columnSaleDate = new global::System.Data.DataColumn("SaleDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSaleDate);
                 this.columnINSERTSTAMP = new global::System.Data.DataColumn("INSERTSTAMP", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINSERTSTAMP);
+                this.columnQuoteID = new global::System.Data.DataColumn("QuoteID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuoteID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2585,9 +2669,9 @@ namespace ProLyfeQuoteTool {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnProspectID.AllowDBNull = false;
-                this.columnQuoteRespID.AllowDBNull = false;
                 this.columnSaleDate.AllowDBNull = false;
                 this.columnINSERTSTAMP.AllowDBNull = false;
+                this.columnQuoteID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4011,6 +4095,719 @@ namespace ProLyfeQuoteTool {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vw_QuoteDataTable : global::System.Data.TypedTableBase<vw_QuoteRow> {
+            
+            private global::System.Data.DataColumn columnProspectID;
+            
+            private global::System.Data.DataColumn columnQuoteReqID;
+            
+            private global::System.Data.DataColumn columnQuoteResID;
+            
+            private global::System.Data.DataColumn columnDressCost;
+            
+            private global::System.Data.DataColumn columnVenueCost;
+            
+            private global::System.Data.DataColumn columnCateringCost;
+            
+            private global::System.Data.DataColumn columnPremiumPerMonth;
+            
+            private global::System.Data.DataColumn columnStartDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteDataTable() {
+                this.TableName = "vw_Quote";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vw_QuoteDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected vw_QuoteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProspectIDColumn {
+                get {
+                    return this.columnProspectID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuoteReqIDColumn {
+                get {
+                    return this.columnQuoteReqID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuoteResIDColumn {
+                get {
+                    return this.columnQuoteResID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DressCostColumn {
+                get {
+                    return this.columnDressCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VenueCostColumn {
+                get {
+                    return this.columnVenueCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CateringCostColumn {
+                get {
+                    return this.columnCateringCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumPerMonthColumn {
+                get {
+                    return this.columnPremiumPerMonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StartDateColumn {
+                get {
+                    return this.columnStartDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteRow this[int index] {
+                get {
+                    return ((vw_QuoteRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_QuoteRowChangeEventHandler vw_QuoteRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_QuoteRowChangeEventHandler vw_QuoteRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_QuoteRowChangeEventHandler vw_QuoteRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vw_QuoteRowChangeEventHandler vw_QuoteRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addvw_QuoteRow(vw_QuoteRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteRow Addvw_QuoteRow(int ProspectID, int QuoteReqID, int QuoteResID, decimal DressCost, decimal VenueCost, decimal CateringCost, decimal PremiumPerMonth, System.DateTime StartDate) {
+                vw_QuoteRow rowvw_QuoteRow = ((vw_QuoteRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ProspectID,
+                        QuoteReqID,
+                        QuoteResID,
+                        DressCost,
+                        VenueCost,
+                        CateringCost,
+                        PremiumPerMonth,
+                        StartDate};
+                rowvw_QuoteRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvw_QuoteRow);
+                return rowvw_QuoteRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteRow FindByQuoteResID(int QuoteResID) {
+                return ((vw_QuoteRow)(this.Rows.Find(new object[] {
+                            QuoteResID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vw_QuoteDataTable cln = ((vw_QuoteDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vw_QuoteDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnProspectID = base.Columns["ProspectID"];
+                this.columnQuoteReqID = base.Columns["QuoteReqID"];
+                this.columnQuoteResID = base.Columns["QuoteResID"];
+                this.columnDressCost = base.Columns["DressCost"];
+                this.columnVenueCost = base.Columns["VenueCost"];
+                this.columnCateringCost = base.Columns["CateringCost"];
+                this.columnPremiumPerMonth = base.Columns["PremiumPerMonth"];
+                this.columnStartDate = base.Columns["StartDate"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnProspectID = new global::System.Data.DataColumn("ProspectID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProspectID);
+                this.columnQuoteReqID = new global::System.Data.DataColumn("QuoteReqID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuoteReqID);
+                this.columnQuoteResID = new global::System.Data.DataColumn("QuoteResID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuoteResID);
+                this.columnDressCost = new global::System.Data.DataColumn("DressCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDressCost);
+                this.columnVenueCost = new global::System.Data.DataColumn("VenueCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVenueCost);
+                this.columnCateringCost = new global::System.Data.DataColumn("CateringCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCateringCost);
+                this.columnPremiumPerMonth = new global::System.Data.DataColumn("PremiumPerMonth", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremiumPerMonth);
+                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStartDate);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnQuoteResID}, true));
+                this.columnProspectID.AllowDBNull = false;
+                this.columnQuoteReqID.AllowDBNull = false;
+                this.columnQuoteResID.AllowDBNull = false;
+                this.columnQuoteResID.Unique = true;
+                this.columnPremiumPerMonth.AllowDBNull = false;
+                this.columnStartDate.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteRow Newvw_QuoteRow() {
+                return ((vw_QuoteRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vw_QuoteRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vw_QuoteRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vw_QuoteRowChanged != null)) {
+                    this.vw_QuoteRowChanged(this, new vw_QuoteRowChangeEvent(((vw_QuoteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vw_QuoteRowChanging != null)) {
+                    this.vw_QuoteRowChanging(this, new vw_QuoteRowChangeEvent(((vw_QuoteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vw_QuoteRowDeleted != null)) {
+                    this.vw_QuoteRowDeleted(this, new vw_QuoteRowChangeEvent(((vw_QuoteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vw_QuoteRowDeleting != null)) {
+                    this.vw_QuoteRowDeleting(this, new vw_QuoteRowChangeEvent(((vw_QuoteRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removevw_QuoteRow(vw_QuoteRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vw_QuoteDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class QuotesDataTable : global::System.Data.TypedTableBase<QuotesRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnProspectID;
+            
+            private global::System.Data.DataColumn columnDressCost;
+            
+            private global::System.Data.DataColumn columnVenueCost;
+            
+            private global::System.Data.DataColumn columnCateringCost;
+            
+            private global::System.Data.DataColumn columnMonthlyPremium;
+            
+            private global::System.Data.DataColumn columnStartDate;
+            
+            private global::System.Data.DataColumn columnINSERTSTAMP;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesDataTable() {
+                this.TableName = "Quotes";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QuotesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected QuotesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProspectIDColumn {
+                get {
+                    return this.columnProspectID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DressCostColumn {
+                get {
+                    return this.columnDressCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VenueCostColumn {
+                get {
+                    return this.columnVenueCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CateringCostColumn {
+                get {
+                    return this.columnCateringCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MonthlyPremiumColumn {
+                get {
+                    return this.columnMonthlyPremium;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StartDateColumn {
+                get {
+                    return this.columnStartDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn INSERTSTAMPColumn {
+                get {
+                    return this.columnINSERTSTAMP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRow this[int index] {
+                get {
+                    return ((QuotesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QuotesRowChangeEventHandler QuotesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QuotesRowChangeEventHandler QuotesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QuotesRowChangeEventHandler QuotesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QuotesRowChangeEventHandler QuotesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddQuotesRow(QuotesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRow AddQuotesRow(int ID, ProspectRow parentProspectRowByFK_Quotes_Prospect, decimal DressCost, decimal VenueCost, decimal CateringCost, decimal MonthlyPremium, System.DateTime StartDate, System.DateTime INSERTSTAMP) {
+                QuotesRow rowQuotesRow = ((QuotesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID,
+                        null,
+                        DressCost,
+                        VenueCost,
+                        CateringCost,
+                        MonthlyPremium,
+                        StartDate,
+                        INSERTSTAMP};
+                if ((parentProspectRowByFK_Quotes_Prospect != null)) {
+                    columnValuesArray[1] = parentProspectRowByFK_Quotes_Prospect[0];
+                }
+                rowQuotesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQuotesRow);
+                return rowQuotesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                QuotesDataTable cln = ((QuotesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new QuotesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnProspectID = base.Columns["ProspectID"];
+                this.columnDressCost = base.Columns["DressCost"];
+                this.columnVenueCost = base.Columns["VenueCost"];
+                this.columnCateringCost = base.Columns["CateringCost"];
+                this.columnMonthlyPremium = base.Columns["MonthlyPremium"];
+                this.columnStartDate = base.Columns["StartDate"];
+                this.columnINSERTSTAMP = base.Columns["INSERTSTAMP"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnProspectID = new global::System.Data.DataColumn("ProspectID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProspectID);
+                this.columnDressCost = new global::System.Data.DataColumn("DressCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDressCost);
+                this.columnVenueCost = new global::System.Data.DataColumn("VenueCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVenueCost);
+                this.columnCateringCost = new global::System.Data.DataColumn("CateringCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCateringCost);
+                this.columnMonthlyPremium = new global::System.Data.DataColumn("MonthlyPremium", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonthlyPremium);
+                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStartDate);
+                this.columnINSERTSTAMP = new global::System.Data.DataColumn("INSERTSTAMP", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINSERTSTAMP);
+                this.columnID.AllowDBNull = false;
+                this.columnProspectID.AllowDBNull = false;
+                this.columnMonthlyPremium.AllowDBNull = false;
+                this.columnStartDate.AllowDBNull = false;
+                this.columnINSERTSTAMP.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRow NewQuotesRow() {
+                return ((QuotesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new QuotesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(QuotesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.QuotesRowChanged != null)) {
+                    this.QuotesRowChanged(this, new QuotesRowChangeEvent(((QuotesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.QuotesRowChanging != null)) {
+                    this.QuotesRowChanging(this, new QuotesRowChangeEvent(((QuotesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.QuotesRowDeleted != null)) {
+                    this.QuotesRowDeleted(this, new QuotesRowChangeEvent(((QuotesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.QuotesRowDeleting != null)) {
+                    this.QuotesRowDeleting(this, new QuotesRowChangeEvent(((QuotesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveQuotesRow(QuotesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "QuotesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PurchaseViewDataTable : global::System.Data.TypedTableBase<PurchaseViewRow> {
             
             private global::System.Data.DataColumn columnFirstName;
@@ -5062,6 +5859,17 @@ namespace ProLyfeQuoteTool {
                     return ((QuoteRequestRow[])(base.GetChildRows(this.Table.ChildRelations["FK_QuoteRequest_Prospect1"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRow[] GetQuotesRows() {
+                if ((this.Table.ChildRelations["FK_Quotes_Prospect"] == null)) {
+                    return new QuotesRow[0];
+                }
+                else {
+                    return ((QuotesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Quotes_Prospect"])));
+                }
+            }
         }
         
         /// <summary>
@@ -5102,17 +5910,6 @@ namespace ProLyfeQuoteTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int QuoteRespID {
-                get {
-                    return ((int)(this[this.tablePurchasedPolicy.QuoteRespIDColumn]));
-                }
-                set {
-                    this[this.tablePurchasedPolicy.QuoteRespIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime SaleDate {
                 get {
                     return ((global::System.DateTime)(this[this.tablePurchasedPolicy.SaleDateColumn]));
@@ -5135,6 +5932,17 @@ namespace ProLyfeQuoteTool {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int QuoteID {
+                get {
+                    return ((int)(this[this.tablePurchasedPolicy.QuoteIDColumn]));
+                }
+                set {
+                    this[this.tablePurchasedPolicy.QuoteIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProspectRow ProspectRow {
                 get {
                     return ((ProspectRow)(this.GetParentRow(this.Table.ParentRelations["FK_PurchasedPolicy_Prospect"])));
@@ -5152,6 +5960,17 @@ namespace ProLyfeQuoteTool {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_PurchasedPolicy_QuoteResponse"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRow QuotesRow {
+                get {
+                    return ((QuotesRow)(this.GetParentRow(this.Table.ParentRelations["FK_PurchasedPolicy_Quotes"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PurchasedPolicy_Quotes"]);
                 }
             }
         }
@@ -5601,6 +6420,336 @@ namespace ProLyfeQuoteTool {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetWorkNumberNull() {
                 this[this.tablevw_CustomerInfo.WorkNumberColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vw_QuoteRow : global::System.Data.DataRow {
+            
+            private vw_QuoteDataTable tablevw_Quote;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vw_QuoteRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevw_Quote = ((vw_QuoteDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ProspectID {
+                get {
+                    return ((int)(this[this.tablevw_Quote.ProspectIDColumn]));
+                }
+                set {
+                    this[this.tablevw_Quote.ProspectIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int QuoteReqID {
+                get {
+                    return ((int)(this[this.tablevw_Quote.QuoteReqIDColumn]));
+                }
+                set {
+                    this[this.tablevw_Quote.QuoteReqIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int QuoteResID {
+                get {
+                    return ((int)(this[this.tablevw_Quote.QuoteResIDColumn]));
+                }
+                set {
+                    this[this.tablevw_Quote.QuoteResIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DressCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_Quote.DressCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DressCost\' in table \'vw_Quote\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_Quote.DressCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal VenueCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_Quote.VenueCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VenueCost\' in table \'vw_Quote\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_Quote.VenueCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CateringCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablevw_Quote.CateringCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CateringCost\' in table \'vw_Quote\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevw_Quote.CateringCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PremiumPerMonth {
+                get {
+                    return ((decimal)(this[this.tablevw_Quote.PremiumPerMonthColumn]));
+                }
+                set {
+                    this[this.tablevw_Quote.PremiumPerMonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime StartDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tablevw_Quote.StartDateColumn]));
+                }
+                set {
+                    this[this.tablevw_Quote.StartDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDressCostNull() {
+                return this.IsNull(this.tablevw_Quote.DressCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDressCostNull() {
+                this[this.tablevw_Quote.DressCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVenueCostNull() {
+                return this.IsNull(this.tablevw_Quote.VenueCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVenueCostNull() {
+                this[this.tablevw_Quote.VenueCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCateringCostNull() {
+                return this.IsNull(this.tablevw_Quote.CateringCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCateringCostNull() {
+                this[this.tablevw_Quote.CateringCostColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class QuotesRow : global::System.Data.DataRow {
+            
+            private QuotesDataTable tableQuotes;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QuotesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableQuotes = ((QuotesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableQuotes.IDColumn]));
+                }
+                set {
+                    this[this.tableQuotes.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ProspectID {
+                get {
+                    return ((int)(this[this.tableQuotes.ProspectIDColumn]));
+                }
+                set {
+                    this[this.tableQuotes.ProspectIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DressCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableQuotes.DressCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DressCost\' in table \'Quotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQuotes.DressCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal VenueCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableQuotes.VenueCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VenueCost\' in table \'Quotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQuotes.VenueCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CateringCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableQuotes.CateringCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CateringCost\' in table \'Quotes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQuotes.CateringCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal MonthlyPremium {
+                get {
+                    return ((decimal)(this[this.tableQuotes.MonthlyPremiumColumn]));
+                }
+                set {
+                    this[this.tableQuotes.MonthlyPremiumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime StartDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableQuotes.StartDateColumn]));
+                }
+                set {
+                    this[this.tableQuotes.StartDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime INSERTSTAMP {
+                get {
+                    return ((global::System.DateTime)(this[this.tableQuotes.INSERTSTAMPColumn]));
+                }
+                set {
+                    this[this.tableQuotes.INSERTSTAMPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ProspectRow ProspectRow {
+                get {
+                    return ((ProspectRow)(this.GetParentRow(this.Table.ParentRelations["FK_Quotes_Prospect"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Quotes_Prospect"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDressCostNull() {
+                return this.IsNull(this.tableQuotes.DressCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDressCostNull() {
+                this[this.tableQuotes.DressCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVenueCostNull() {
+                return this.IsNull(this.tableQuotes.VenueCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVenueCostNull() {
+                this[this.tableQuotes.VenueCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCateringCostNull() {
+                return this.IsNull(this.tableQuotes.CateringCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCateringCostNull() {
+                this[this.tableQuotes.CateringCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PurchasedPolicyRow[] GetPurchasedPolicyRows() {
+                if ((this.Table.ChildRelations["FK_PurchasedPolicy_Quotes"] == null)) {
+                    return new PurchasedPolicyRow[0];
+                }
+                else {
+                    return ((PurchasedPolicyRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PurchasedPolicy_Quotes"])));
+                }
             }
         }
         
@@ -6202,6 +7351,74 @@ namespace ProLyfeQuoteTool {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public vw_CustomerInfoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class vw_QuoteRowChangeEvent : global::System.EventArgs {
+            
+            private vw_QuoteRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteRowChangeEvent(vw_QuoteRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vw_QuoteRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class QuotesRowChangeEvent : global::System.EventArgs {
+            
+            private QuotesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRowChangeEvent(QuotesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QuotesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -9235,44 +10452,46 @@ SELECT ID, LeadID, FirstName, LastName, DOB, INSERTSTAMP FROM Prospect WHERE (ID
             tableMapping.DataSetTable = "PurchasedPolicy";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("ProspectID", "ProspectID");
-            tableMapping.ColumnMappings.Add("QuoteRespID", "QuoteRespID");
             tableMapping.ColumnMappings.Add("SaleDate", "SaleDate");
             tableMapping.ColumnMappings.Add("INSERTSTAMP", "INSERTSTAMP");
+            tableMapping.ColumnMappings.Add("QuoteID", "QuoteID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PurchasedPolicy] WHERE (([ID] = @Original_ID) AND ([ProspectID" +
-                "] = @Original_ProspectID) AND ([QuoteRespID] = @Original_QuoteRespID) AND ([Sale" +
-                "Date] = @Original_SaleDate) AND ([INSERTSTAMP] = @Original_INSERTSTAMP))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [PurchasedPolicy] WHERE (([ID] = @Original_ID) AND ([ProspectID] = @O" +
+                "riginal_ProspectID) AND ([SaleDate] = @Original_SaleDate) AND ([INSERTSTAMP] = @" +
+                "Original_INSERTSTAMP) AND ([QuoteID] = @Original_QuoteID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProspectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuoteRespID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteRespID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SaleDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SaleDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INSERTSTAMP", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSERTSTAMP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuoteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PurchasedPolicy] ([ProspectID], [QuoteRespID], [SaleDate], [INSERTSTAMP]) VALUES (@ProspectID, @QuoteRespID, @SaleDate, @INSERTSTAMP);
-SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [PurchasedPolicy] ([ProspectID], [SaleDate], [INSERTSTAMP], [QuoteID]" +
+                ") VALUES (@ProspectID, @SaleDate, @INSERTSTAMP, @QuoteID);\r\nSELECT ID, ProspectI" +
+                "D, SaleDate, INSERTSTAMP, QuoteID FROM PurchasedPolicy WHERE (ID = SCOPE_IDENTIT" +
+                "Y())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProspectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuoteRespID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteRespID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SaleDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SaleDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSERTSTAMP", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSERTSTAMP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuoteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PurchasedPolicy] SET [ProspectID] = @ProspectID, [QuoteRespID] = @QuoteRespID, [SaleDate] = @SaleDate, [INSERTSTAMP] = @INSERTSTAMP WHERE (([ID] = @Original_ID) AND ([ProspectID] = @Original_ProspectID) AND ([QuoteRespID] = @Original_QuoteRespID) AND ([SaleDate] = @Original_SaleDate) AND ([INSERTSTAMP] = @Original_INSERTSTAMP));
-SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [PurchasedPolicy] SET [ProspectID] = @ProspectID, [SaleDate] = @SaleDate, [INSERTSTAMP] = @INSERTSTAMP, [QuoteID] = @QuoteID WHERE (([ID] = @Original_ID) AND ([ProspectID] = @Original_ProspectID) AND ([SaleDate] = @Original_SaleDate) AND ([INSERTSTAMP] = @Original_INSERTSTAMP) AND ([QuoteID] = @Original_QuoteID));
+SELECT ID, ProspectID, SaleDate, INSERTSTAMP, QuoteID FROM PurchasedPolicy WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProspectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuoteRespID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteRespID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SaleDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SaleDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSERTSTAMP", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSERTSTAMP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuoteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProspectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuoteRespID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteRespID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SaleDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SaleDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INSERTSTAMP", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSERTSTAMP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuoteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuoteID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -9289,8 +10508,7 @@ SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM dbo.PurchasedPolic" +
-                "y";
+            this._commandCollection[0].CommandText = "SELECT ID, ProspectID, SaleDate, INSERTSTAMP, QuoteID FROM PurchasedPolicy";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9351,12 +10569,12 @@ SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, int Original_ProspectID, int Original_QuoteRespID, System.DateTime Original_SaleDate, System.DateTime Original_INSERTSTAMP) {
+        public virtual int Delete(int Original_ID, int Original_ProspectID, System.DateTime Original_SaleDate, System.DateTime Original_INSERTSTAMP, int Original_QuoteID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ProspectID));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_QuoteRespID));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_SaleDate));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_INSERTSTAMP));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_SaleDate));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_INSERTSTAMP));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_QuoteID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9377,11 +10595,11 @@ SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ProspectID, int QuoteRespID, System.DateTime SaleDate, System.DateTime INSERTSTAMP) {
+        public virtual int Insert(int ProspectID, System.DateTime SaleDate, System.DateTime INSERTSTAMP, int QuoteID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ProspectID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(QuoteRespID));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(SaleDate));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(INSERTSTAMP));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(SaleDate));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(INSERTSTAMP));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(QuoteID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9402,16 +10620,16 @@ SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ProspectID, int QuoteRespID, System.DateTime SaleDate, System.DateTime INSERTSTAMP, int Original_ID, int Original_ProspectID, int Original_QuoteRespID, System.DateTime Original_SaleDate, System.DateTime Original_INSERTSTAMP, int ID) {
+        public virtual int Update(int ProspectID, System.DateTime SaleDate, System.DateTime INSERTSTAMP, int QuoteID, int Original_ID, int Original_ProspectID, System.DateTime Original_SaleDate, System.DateTime Original_INSERTSTAMP, int Original_QuoteID, int ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ProspectID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(QuoteRespID));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(SaleDate));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(INSERTSTAMP));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(SaleDate));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(INSERTSTAMP));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(QuoteID));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ProspectID));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_QuoteRespID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_SaleDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_INSERTSTAMP));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_SaleDate));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_INSERTSTAMP));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_QuoteID));
             this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9433,8 +10651,8 @@ SELECT ID, ProspectID, QuoteRespID, SaleDate, INSERTSTAMP FROM PurchasedPolicy W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ProspectID, int QuoteRespID, System.DateTime SaleDate, System.DateTime INSERTSTAMP, int Original_ID, int Original_ProspectID, int Original_QuoteRespID, System.DateTime Original_SaleDate, System.DateTime Original_INSERTSTAMP) {
-            return this.Update(ProspectID, QuoteRespID, SaleDate, INSERTSTAMP, Original_ID, Original_ProspectID, Original_QuoteRespID, Original_SaleDate, Original_INSERTSTAMP, Original_ID);
+        public virtual int Update(int ProspectID, System.DateTime SaleDate, System.DateTime INSERTSTAMP, int QuoteID, int Original_ID, int Original_ProspectID, System.DateTime Original_SaleDate, System.DateTime Original_INSERTSTAMP, int Original_QuoteID) {
+            return this.Update(ProspectID, SaleDate, INSERTSTAMP, QuoteID, Original_ID, Original_ProspectID, Original_SaleDate, Original_INSERTSTAMP, Original_QuoteID, Original_ID);
         }
     }
     
@@ -10965,6 +12183,568 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vw_QuoteTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public vw_QuoteTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vw_Quote";
+            tableMapping.ColumnMappings.Add("ProspectID", "ProspectID");
+            tableMapping.ColumnMappings.Add("QuoteReqID", "QuoteReqID");
+            tableMapping.ColumnMappings.Add("QuoteResID", "QuoteResID");
+            tableMapping.ColumnMappings.Add("DressCost", "DressCost");
+            tableMapping.ColumnMappings.Add("VenueCost", "VenueCost");
+            tableMapping.ColumnMappings.Add("CateringCost", "CateringCost");
+            tableMapping.ColumnMappings.Add("PremiumPerMonth", "PremiumPerMonth");
+            tableMapping.ColumnMappings.Add("StartDate", "StartDate");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProLyfeQuoteTool.Properties.Settings.Default.PromiseLyfeWeddingInsuranceDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ProspectID, QuoteReqID, QuoteResID, DressCost, VenueCost, CateringCost, Pr" +
+                "emiumPerMonth, StartDate FROM dbo.vw_Quote";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ProspectID, QuoteReqID, QuoteResID, DressCost, VenueCost, CateringC" +
+                "ost, PremiumPerMonth, StartDate\r\nFROM            vw_Quote\r\nWHERE        (Prospec" +
+                "tID = @prospectID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prospectID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.vw_QuoteDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.vw_QuoteDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.vw_QuoteDataTable dataTable = new DataSet1.vw_QuoteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProspectID(DataSet1.vw_QuoteDataTable dataTable, int prospectID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(prospectID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.vw_QuoteDataTable GetDataByProspectID(int prospectID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(prospectID));
+            DataSet1.vw_QuoteDataTable dataTable = new DataSet1.vw_QuoteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class QuotesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public QuotesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Quotes";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("ProspectID", "ProspectID");
+            tableMapping.ColumnMappings.Add("DressCost", "DressCost");
+            tableMapping.ColumnMappings.Add("VenueCost", "VenueCost");
+            tableMapping.ColumnMappings.Add("CateringCost", "CateringCost");
+            tableMapping.ColumnMappings.Add("MonthlyPremium", "MonthlyPremium");
+            tableMapping.ColumnMappings.Add("StartDate", "StartDate");
+            tableMapping.ColumnMappings.Add("INSERTSTAMP", "INSERTSTAMP");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Quotes] ([ID], [ProspectID], [DressCost], [VenueCost], [Cateri" +
+                "ngCost], [MonthlyPremium], [StartDate], [INSERTSTAMP]) VALUES (@ID, @ProspectID," +
+                " @DressCost, @VenueCost, @CateringCost, @MonthlyPremium, @StartDate, @INSERTSTAM" +
+                "P)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProspectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DressCost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DressCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VenueCost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VenueCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CateringCost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CateringCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MonthlyPremium", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MonthlyPremium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INSERTSTAMP", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INSERTSTAMP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProLyfeQuoteTool.Properties.Settings.Default.PromiseLyfeWeddingInsuranceDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, ProspectID, DressCost, VenueCost, CateringCost, MonthlyPremium, StartD" +
+                "ate, INSERTSTAMP FROM dbo.Quotes";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ID, ProspectID, DressCost, VenueCost, CateringCost, MonthlyPremium, StartDate, INSERTSTAMP
+FROM            Quotes
+WHERE        (ProspectID = @prospect) AND (ID NOT IN
+                             (SELECT        QuoteID
+                               FROM            PurchasedPolicy))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prospect", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO Quotes\r\n                         (ProspectID, DressCost, VenueCost, C" +
+                "ateringCost, MonthlyPremium, StartDate)\r\nVALUES        (@ProspectID,@DressCost,@" +
+                "VenueCost,@CateringCost,@MonthlyPremium,@StartDate)\r\nSELECT SCOPE_IDENTITY()";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProspectID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DressCost", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DressCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VenueCost", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "VenueCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CateringCost", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CateringCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MonthlyPremium", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "MonthlyPremium", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.QuotesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.QuotesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.QuotesDataTable dataTable = new DataSet1.QuotesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByProspectIDNotPurchased(DataSet1.QuotesDataTable dataTable, int prospect) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(prospect));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.QuotesDataTable GetDataByProspectIDNotPurchased(int prospect) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(prospect));
+            DataSet1.QuotesDataTable dataTable = new DataSet1.QuotesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.QuotesDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "Quotes");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ID, int ProspectID, global::System.Nullable<decimal> DressCost, global::System.Nullable<decimal> VenueCost, global::System.Nullable<decimal> CateringCost, decimal MonthlyPremium, System.DateTime StartDate, System.DateTime INSERTSTAMP) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ProspectID));
+            if ((DressCost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(DressCost.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((VenueCost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(VenueCost.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CateringCost.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(CateringCost.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(MonthlyPremium));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(StartDate));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(INSERTSTAMP));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuote(int ProspectID, global::System.Nullable<decimal> DressCost, global::System.Nullable<decimal> VenueCost, global::System.Nullable<decimal> CateringCost, decimal MonthlyPremium, System.DateTime StartDate) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(ProspectID));
+            if ((DressCost.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(DressCost.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((VenueCost.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(VenueCost.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((CateringCost.HasValue == true)) {
+                command.Parameters[3].Value = ((decimal)(CateringCost.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[4].Value = ((decimal)(MonthlyPremium));
+            command.Parameters[5].Value = ((System.DateTime)(StartDate));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class PurchaseViewTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -11284,6 +13064,8 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
         
         private Ref_AddressTypeTableAdapter _ref_AddressTypeTableAdapter;
         
+        private QuotesTableAdapter _quotesTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -11427,6 +13209,20 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public QuotesTableAdapter QuotesTableAdapter {
+            get {
+                return this._quotesTableAdapter;
+            }
+            set {
+                this._quotesTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -11480,6 +13276,10 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                             && (this._ref_AddressTypeTableAdapter.Connection != null))) {
                     return this._ref_AddressTypeTableAdapter.Connection;
                 }
+                if (((this._quotesTableAdapter != null) 
+                            && (this._quotesTableAdapter.Connection != null))) {
+                    return this._quotesTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -11518,6 +13318,9 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                     count = (count + 1);
                 }
                 if ((this._ref_AddressTypeTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._quotesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -11573,6 +13376,15 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._ref_AddressTypeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._quotesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Quotes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._quotesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11662,6 +13474,14 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._quotesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Quotes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._quotesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._addressTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Address.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -11733,6 +13553,14 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._addressTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._quotesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Quotes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._quotesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11860,6 +13688,11 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._quotesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._quotesTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -11973,6 +13806,15 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                         adaptersWithAcceptChangesDuringUpdate.Add(this._ref_AddressTypeTableAdapter.Adapter);
                     }
                 }
+                if ((this._quotesTableAdapter != null)) {
+                    revertConnections.Add(this._quotesTableAdapter, this._quotesTableAdapter.Connection);
+                    this._quotesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._quotesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._quotesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._quotesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._quotesTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -12066,6 +13908,10 @@ SELECT ID, QuoteReqID, PremiumPerMonth, StartDate, INSERTSTAMP FROM QuoteRespons
                 if ((this._ref_AddressTypeTableAdapter != null)) {
                     this._ref_AddressTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ref_AddressTypeTableAdapter]));
                     this._ref_AddressTypeTableAdapter.Transaction = null;
+                }
+                if ((this._quotesTableAdapter != null)) {
+                    this._quotesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._quotesTableAdapter]));
+                    this._quotesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
