@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\App.xaml
-6348942312
+8-912782894
 
-15637368876
+17-722363282
 24-1237614095
-BillingInfo.xaml;MainWindow.xaml;CustomerInfo.xaml;ProspectInfo.xaml;QuoteRequest.xaml;QuoteResponse.xaml;
+BillingInfo.xaml;CollectAddress.xaml;MainWindow.xaml;CustomerInfo.xaml;ProspectInfo.xaml;QuoteRequest.xaml;QuoteResponse.xaml;SaleComplete.xaml;
 
 False
 

@@ -1,0 +1,28 @@
+﻿<Page x:Class="ProLyfeQuoteTool.CollectAddress"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+	Title="CollectAddress" Width="484.364">
+
+    <Grid>
+        <Label Content="Address Form" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address Line 1:" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address Line 2:" HorizontalAlignment="Left" Margin="23,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Line1" HorizontalAlignment="Left" Height="23" Margin="23,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267"/>
+        <TextBox x:Name="Line2" HorizontalAlignment="Left" Height="23" Margin="23,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="267"/>
+        <Label Content="Post Code" HorizontalAlignment="Left" Margin="23,181,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PostCode" HorizontalAlignment="Left" Height="23" Margin="23,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121"/>
+        <Label Content="Address Type" HorizontalAlignment="Left" Margin="170,181,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="AddType" HorizontalAlignment="Left" Margin="170,212,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Name="HomeAdd">Home Address</ComboBoxItem>
+            <ComboBoxItem Name="WorkAdd">Work Address</ComboBoxItem>
+            <ComboBoxItem Name="OtherAdd">Other Address</ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="NextButton" Content="Next" HorizontalAlignment="Left" Margin="400,270,-175,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
+        <Button x:Name="PrevButton" Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
+
+    </Grid>
+</Page>

@@ -21,24 +21,32 @@ namespace ProLyfeQuoteTool
     /// </summary>
     public partial class QuoteRequest : Page
     {
-        DataSet1TableAdapters.QueriesTableAdapter queriesAdapeter = new DataSet1TableAdapters.QueriesTableAdapter();
+        DataSet1TableAdapters.QuoteRequestTableAdapter quoteReqTableAdapter;
+        DataSet1TableAdapters.QuoteResponseTableAdapter quoteResTableAdapter;
 
-        public QuoteRequest()
+        int ProspectID;
+        int QuoteRequestID;
+        int QuoteResponseID;
+
+        public QuoteRequest(int p_ProspectID)
         {
-            InitializeComponent();
+
+         InitializeComponent();
+
+         ProspectID = p_ProspectID;
+
+         quoteReqTableAdapter = new DataSet1TableAdapters.QuoteRequestTableAdapter();
+         quoteResTableAdapter = new DataSet1TableAdapters.QuoteResponseTableAdapter();
+
+
+
         }
 
         private void b_quoteReqNext_Click(object sender, RoutedEventArgs e)
         {
-            if (NavigationService.CanGoForward)
-            {
-                NavigationService.GoForward();
-            }
-            else
-            {
-                QuoteResponse ResponsePage = new QuoteResponse();
+                RequestQuote();
+                QuoteResponse ResponsePage = new QuoteResponse(QuoteResponseID, ProspectID);
                 this.NavigationService.Navigate(ResponsePage);
-            }
         }
 
         private void b_quoteReqPrevious(object sender, RoutedEventArgs e)
@@ -94,14 +102,26 @@ namespace ProLyfeQuoteTool
             e.Handled = true;
         }
 
-        private void Quote()
+        private void RequestQuote()
+        {
+            //insert quote request into DB then generate quote and pass ID to next page
+
+            QuoteRequestID = (int)quoteReqTableAdapter.InsertQuery(ProspectID, decimal.Parse(tb_dressCost.Text), decimal.Parse(tb_venueCost.Text), decimal.Parse(tb_cateringCost.Text));
+
+
+            QuoteResponse();
+        }
+
+        private void QuoteResponse()
         {
             decimal total = decimal.Parse(tb_cateringCost.Text) + decimal.Parse(tb_dressCost.Text) + decimal.Parse(tb_venueCost.Text);
 
             decimal premium = total / 100;
             DateTime start = DateTime.Now.AddDays(7);
 
-            
+            //insert quote into db
+
+            QuoteResponseID = (int)quoteResTableAdapter.InsertQuery(QuoteRequestID, premium, start);
         }
     }
 }

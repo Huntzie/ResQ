@@ -20,14 +20,37 @@ namespace ProLyfeQuoteTool
     /// </summary>
     public partial class QuoteResponse : Page
     {
-        public QuoteResponse()
+
+        DataSet1TableAdapters.QuoteResponseTableAdapter QuoteResTableAdapter;
+        int ProspectID;
+
+        public QuoteResponse(int p_QuoteResponseID, int p_ProspectID)
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            ProspectID = p_ProspectID;
+
+            QuoteResTableAdapter = new DataSet1TableAdapters.QuoteResponseTableAdapter();
+
+            PPM.Text = (string)QuoteResTableAdapter.GetPremiumFromQuoteReqID(p_QuoteResponseID).ToString();
+
+            StartDate.SelectedDate = (DateTime)QuoteResTableAdapter.FindStartDateFromQuoteReqID(p_QuoteResponseID);
+
         }
 
         private void b_returnToRequest_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new CollectAddress(ProspectID));
         }
     }
 }

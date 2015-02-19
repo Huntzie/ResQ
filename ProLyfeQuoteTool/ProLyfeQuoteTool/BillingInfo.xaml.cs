@@ -20,9 +20,51 @@ namespace ProLyfeQuoteTool
     /// </summary>
     public partial class BillingInfo : Page
     {
-        public BillingInfo()
+
+        DataSet1TableAdapters.BillingTableAdapter billingTableAdapter;
+
+        int billingID;
+        bool BillingRecord;
+        int prospectID;
+
+        public BillingInfo(int p_prospectID)
         {
+            prospectID = p_prospectID;
+
             InitializeComponent();
+
+            billingTableAdapter = new DataSet1TableAdapters.BillingTableAdapter();
+
+            try
+            {
+                billingID = (int)billingTableAdapter.GetBillingIDFromProspectID(prospectID);
+                BillingRecord = true;
+            }
+            catch {
+
+                BillingRecord = false;
+            }
+
+
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+            if (BillingRecord)
+            {
+                billingTableAdapter.UpdateQuery(int.Parse(AccNum.Text), AccName.Text, int.Parse(SortCode.Text), prospectID, prospectID);
+                //Update Record
+            }
+            else
+            {
+                billingTableAdapter.UpdateQuery(int.Parse(AccNum.Text), AccName.Text, int.Parse(SortCode.Text), prospectID, prospectID);
+            }
+
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -43,9 +43,18 @@ namespace ProLyfeQuoteTool
 
             leadID = int.Parse(args[4]);
 
-            FillInfo();
-
             
+
+            if ((string)leadTableAdapter.GetNameByID(leadID) != null)
+            {
+                FullName.Text = (string)leadTableAdapter.GetNameByID(leadID);
+            }
+            if ((string)leadTableAdapter.GetEmailByID(leadID) != null)
+            {
+                Email.Text = (string)leadTableAdapter.GetEmailByID(leadID);
+            }
+
+            FillInfo();
         }
 
         private void FillInfo()
@@ -54,8 +63,8 @@ namespace ProLyfeQuoteTool
             {
                 prospectID = (int)prospectTableAdapter.GetIDByLeadID(leadID);
                 
-                FirstName.Text = prospectTableAdapter.GetFirstNameByProspectID(prospectID).ToString();
-                LastName.Text = prospectTableAdapter.GetLastNameByProspectID(prospectID).ToString();
+                FirstName.Text = (string)prospectTableAdapter.GetFirstNameByProspectID(prospectID);
+                LastName.Text = (string)prospectTableAdapter.GetLastNameByProspectID(prospectID);
                 DOB.SelectedDate = (DateTime)prospectTableAdapter.GetDOBByProspectID(prospectID);
 
                 ProspectRecord = true;
@@ -82,9 +91,6 @@ namespace ProLyfeQuoteTool
             }
 
 
-            FullName.Text = leadTableAdapter.GetNameByID(leadID).ToString();
-            Email.Text = leadTableAdapter.GetEmailByID(leadID).ToString();
-
             
         }
 
@@ -96,16 +102,7 @@ namespace ProLyfeQuoteTool
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
-            if (ContactRecord)
-            {
-                contactTableAdapter.UpdateQuery1(int.Parse(HomeNumber.Text), int.Parse(MobileNumber.Text), int.Parse(WorkNumber.Text), contactID, contactID);
-                //Update Record
-            }
-            else
-            {
-                contactTableAdapter.InsertQuery(int.Parse(HomeNumber.Text), int.Parse(MobileNumber.Text), int.Parse(WorkNumber.Text), prospectID);
-                //create new record
-            }
+
 
             if (ProspectRecord)
             {
@@ -116,7 +113,22 @@ namespace ProLyfeQuoteTool
             {
                 prospectTableAdapter.InsertQuery(leadID, FirstName.Text, LastName.Text, DOB.DisplayDate);
                 //create new record
+                prospectID = (int)prospectTableAdapter.GetIDByLeadID(leadID);
+
+                if (ContactRecord)
+                {
+                    contactTableAdapter.UpdateQuery1(int.Parse(HomeNumber.Text), int.Parse(MobileNumber.Text), int.Parse(WorkNumber.Text), contactID, contactID);
+                    //Update Record
+                }
+                else
+                {
+                    contactTableAdapter.InsertQuery(prospectID, int.Parse(HomeNumber.Text), int.Parse(MobileNumber.Text), int.Parse(WorkNumber.Text));
+
+                }
             }
+
+            
+
 
             QuoteRequest QuotePage = new QuoteRequest(prospectID);
             this.NavigationService.Navigate(QuotePage);

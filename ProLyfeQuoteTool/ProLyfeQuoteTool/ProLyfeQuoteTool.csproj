@@ -72,6 +72,9 @@
     <Compile Include="BillingInfo.xaml.cs">
       <DependentUpon>BillingInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CollectAddress.xaml.cs">
+      <DependentUpon>CollectAddress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +90,10 @@
       <DependentUpon>QuoteResponse.xaml</DependentUpon>
     </Compile>
     <Page Include="BillingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CollectAddress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
