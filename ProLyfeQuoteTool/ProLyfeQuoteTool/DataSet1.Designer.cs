@@ -14030,7 +14030,7 @@ WHERE        (dbo.Prospect.ID = @ProspectID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet1.PurchaseView1DataTable dataTable, int ProspectID) {
+        public virtual int FillByProspectID(DataSet1.PurchaseView1DataTable dataTable, int ProspectID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ProspectID));
             if ((this.ClearBeforeFill == true)) {
@@ -14044,7 +14044,7 @@ WHERE        (dbo.Prospect.ID = @ProspectID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.PurchaseView1DataTable GetDataBy(int ProspectID) {
+        public virtual DataSet1.PurchaseView1DataTable GetDataByProspectID(int ProspectID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ProspectID));
             DataSet1.PurchaseView1DataTable dataTable = new DataSet1.PurchaseView1DataTable();

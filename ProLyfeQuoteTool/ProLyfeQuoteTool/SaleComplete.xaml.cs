@@ -37,9 +37,11 @@ namespace ProLyfeQuoteTool
 
             ProLyfeQuoteTool.DataSet1 DataSet = ((ProLyfeQuoteTool.DataSet1)(this.FindResource("dataSet1")));
 
-
-            purchaseViewAdapter.FillBy(DataSet.PurchaseView1, ProspectID);
-            
+            try
+            {
+                purchaseViewAdapter.FillByProspectID(DataSet.PurchaseView1, ProspectID);
+            }
+            catch { }
 
         }
     }

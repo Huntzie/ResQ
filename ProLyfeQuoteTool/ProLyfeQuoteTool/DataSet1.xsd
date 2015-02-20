@@ -1208,7 +1208,7 @@ WHERE        (dbo.Prospect.ID = @ProspectID)</CommandText>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="PromiseLyfeWeddingInsuranceDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="PromiseLyfeWeddingInsuranceDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByProspectID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByProspectID" GeneratorSourceName="FillByProspectID" GetMethodModifier="Public" GetMethodName="GetDataByProspectID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByProspectID" UserSourceName="FillByProspectID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        dbo.Prospect.FirstName, dbo.Prospect.LastName, dbo.Prospect.DOB, dbo.Address.Line1, dbo.Address.Line2, dbo.Address.Postcode, dbo.Billing.AccountNum, dbo.Billing.AccountName, dbo.Billing.SortCode, 

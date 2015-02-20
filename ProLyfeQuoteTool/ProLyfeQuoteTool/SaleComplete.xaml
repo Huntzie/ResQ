@@ -9,11 +9,10 @@
 
     <Page.Resources>
         <local:DataSet1 x:Key="dataSet1"/>
-        <CollectionViewSource x:Key="purchaseViewViewSource" Source="{Binding PurchaseView, Source={StaticResource dataSet1}}"/>
         <CollectionViewSource x:Key="purchaseView1ViewSource" Source="{Binding PurchaseView1, Source={StaticResource dataSet1}}"/>
     </Page.Resources>
 
-    <Grid DataContext="{StaticResource purchaseViewViewSource}">
+    <Grid DataContext="{StaticResource purchaseView1ViewSource}">
         <DataGrid x:Name="purchaseView1DataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource purchaseView1ViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>

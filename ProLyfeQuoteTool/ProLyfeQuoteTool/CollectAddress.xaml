@@ -20,6 +20,6 @@
         <Button x:Name="NextButton" Content="Next" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
         <Button x:Name="PrevButton" Content="Previous" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
         <Label x:Name="Warning" Content="! Please fill in all boxes" Margin="83,244,80,10" VerticalAlignment="Center" Foreground="Red" Visibility="Hidden"/>
-        <Button x:Name="Clear"  Content="Add Another Address" HorizontalAlignment="Left" Margin="179,270,0,0" VerticalAlignment="Top" Width="128" Click="Clear_Click"/>
+        <Button x:Name="Clear"  Content="Add Another Address" HorizontalAlignment="Left" Margin="90,270,0,0" VerticalAlignment="Top" Width="128" Click="Clear_Click"/>
     </Grid>
 </Page>
