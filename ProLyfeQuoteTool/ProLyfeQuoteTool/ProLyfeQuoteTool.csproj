@@ -41,6 +41,7 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
@@ -79,6 +80,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PromiseLyfeWeddingInsuranceDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PromiseLyfeWeddingInsuranceDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ProspectInfo.xaml.cs">
       <DependentUpon>ProspectInfo.xaml</DependentUpon>
@@ -157,6 +163,17 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PromiseLyfeWeddingInsuranceDBDataSet.xsc">
+      <DependentUpon>PromiseLyfeWeddingInsuranceDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PromiseLyfeWeddingInsuranceDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PromiseLyfeWeddingInsuranceDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PromiseLyfeWeddingInsuranceDBDataSet.xss">
+      <DependentUpon>PromiseLyfeWeddingInsuranceDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -105,3 +105,4 @@ C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\Co
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\CollectAddress.g.cs
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\SaleComplete.baml
 C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\SaleComplete.g.cs
+C:\Users\vince\Desktop\ResQ\trunk\ProLyfeQuoteTool\ProLyfeQuoteTool\obj\Debug\App.baml

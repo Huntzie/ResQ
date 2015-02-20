@@ -64,7 +64,7 @@ namespace ProLyfeQuoteTool
         {
             //Insert address and clear text boxes
 
-            int addTypeID = (int)addressTypeAdapter.GetIdByType((string)AddType.SelectedItem);
+            int addTypeID = (int)addressTypeAdapter.GetIdByType((string)AddType.Text);
             AdrTableAdapter.InsertQuery(ProspectID, addTypeID, Line1.Text, Line2.Text, PostCode.Text);
 
             Line1.Text = "";
