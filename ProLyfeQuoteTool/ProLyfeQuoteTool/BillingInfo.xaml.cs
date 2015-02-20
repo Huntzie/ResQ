@@ -26,6 +26,7 @@ namespace ProLyfeQuoteTool
         int billingID;
         bool BillingRecord;
         int prospectID;
+        
 
         public BillingInfo(int p_prospectID)
         {

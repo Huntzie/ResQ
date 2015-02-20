@@ -31,15 +31,7 @@ namespace ProLyfeQuoteTool
             ProspectID = p_ProspectID;
             AdrTableAdapter = new DataSet1TableAdapters.AddressTableAdapter();
             addressTypeAdapter = new DataSet1TableAdapters.Ref_AddressTypeTableAdapter();
-            DataSet1.AddressDataTable DataTable;
-           
-            DataTable = AdrTableAdapter.GetDataByProspectID(ProspectID);
-
-            Line1.Text = DataTable.Line1Column.ToString();
-
-            Line2.Text = DataTable.Line2Column.ToString();
-
-            PostCode.Text = DataTable.PostcodeColumn.ToString();
+          
             
         }
 
@@ -57,7 +49,7 @@ namespace ProLyfeQuoteTool
                 return;
             }
 
-            int addTypeID = (int)addressTypeAdapter.GetIdByType((string)AddType.SelectedItem);
+            int addTypeID = (int)addressTypeAdapter.GetIdByType((string)AddType.Text);
             AdrTableAdapter.InsertQuery(ProspectID, addTypeID, Line1.Text, Line2.Text, PostCode.Text);
             this.NavigationService.Navigate(new BillingInfo(ProspectID));
             //store address
@@ -65,6 +57,20 @@ namespace ProLyfeQuoteTool
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            //Insert address and clear text boxes
+
+            int addTypeID = (int)addressTypeAdapter.GetIdByType((string)AddType.SelectedItem);
+            AdrTableAdapter.InsertQuery(ProspectID, addTypeID, Line1.Text, Line2.Text, PostCode.Text);
+
+            Line1.Text = "";
+            Line2.Text = "";
+            PostCode.Text = "";
+            AddType.SelectedIndex = 0;
 
         }
 

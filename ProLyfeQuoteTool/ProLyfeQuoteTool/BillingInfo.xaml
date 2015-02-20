@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProLyfeQuoteTool" x:Class="ProLyfeQuoteTool.BillingInfo" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="BillingInfo">
+      d:DesignHeight="300"
+	Title="BillingInfo" Width="491">
 
     <Page.Resources>
         <local:DataSet1 x:Key="dataSet1"/>
         <CollectionViewSource x:Key="contactInfoViewSource" Source="{Binding ContactInfo, Source={StaticResource dataSet1}}"/>
     </Page.Resources>
 
-    <Grid Background="White" Margin="0,0,-189,0">
+    <Grid Background="White">
         <Label Content="Billing Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="144"/>
         <Label Content="Sort Code" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="144"/>
         <TextBox x:Name="SortCode" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>

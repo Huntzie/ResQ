@@ -12881,7 +12881,7 @@ WHERE        (ProspectID = @prospect) AND (ID NOT IN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT FirstName, LastName, DOB, PremiumPerMonth, StartDate, Line1, Line2, Postco" +
@@ -12889,6 +12889,18 @@ WHERE        (ProspectID = @prospect) AND (ID NOT IN
                 "ERE ProspectID = (@ProspectID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProspectID", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "ProspectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        dbo.Prospect.FirstName, dbo.Prospect.LastName, dbo.Prospect.DOB, dbo.QuoteResponse.PremiumPerMonth, dbo.QuoteResponse.StartDate, dbo.Address.Line1, dbo.Address.Line2, dbo.Address.Postcode, 
+                         dbo.Billing.AccountNum, dbo.Billing.AccountName, dbo.Billing.SortCode, dbo.QuoteRequest.ProspectID, dbo.QuoteResponse.ID
+FROM            dbo.QuoteRequest INNER JOIN
+                         dbo.QuoteResponse ON dbo.QuoteRequest.ID = dbo.QuoteResponse.QuoteReqID RIGHT OUTER JOIN
+                         dbo.Prospect ON dbo.QuoteRequest.ProspectID = dbo.Prospect.ID LEFT OUTER JOIN
+                         dbo.Address ON dbo.Prospect.ID = dbo.Address.ProspectID LEFT OUTER JOIN
+                         dbo.Billing ON dbo.Prospect.ID = dbo.Billing.ProspectID
+WHERE        (dbo.Prospect.ID = @ProspectID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProspectID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12922,6 +12934,32 @@ WHERE        (ProspectID = @prospect) AND (ID NOT IN
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((object)(ProspectID));
             }
+            DataSet1.PurchaseViewDataTable dataTable = new DataSet1.PurchaseViewDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByQuoteID(DataSet1.PurchaseViewDataTable dataTable, int ProspectID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ProspectID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.PurchaseViewDataTable GetDataByQuoteID(int ProspectID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ProspectID));
             DataSet1.PurchaseViewDataTable dataTable = new DataSet1.PurchaseViewDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

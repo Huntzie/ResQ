@@ -25,6 +25,10 @@ namespace ProLyfeQuoteTool
 
         public SaleComplete(int ProspectID)
         {
+           
+
+
+
             InitializeComponent();
 
             purchaseViewAdapter = new DataSet1TableAdapters.PurchaseViewTableAdapter();
@@ -33,7 +37,8 @@ namespace ProLyfeQuoteTool
 
             ProLyfeQuoteTool.DataSet1 DataSet = ((ProLyfeQuoteTool.DataSet1)(this.FindResource("dataSet1")));
 
-            purchaseViewAdapter.Fill(DataSet.PurchaseView, ProspectID);
+
+             purchaseViewAdapter.FillByQuoteID(DataSet.PurchaseView, ProspectID);
             
 
         }
