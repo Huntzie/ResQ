@@ -4,9 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProLyfeQuoteTool" x:Class="ProLyfeQuoteTool.BillingInfo" 
-      mc:Ignorable="d" 
-      d:DesignHeight="300"
-	Title="BillingInfo" Width="295">
+      mc:Ignorable="d"
+	Title="BillingInfo" Width="259" Height="312">
 
     <Page.Resources>
         <local:DataSet1 x:Key="dataSet1"/>
@@ -21,7 +20,7 @@
         <TextBox x:Name="AccNum" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="10,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
         <Label Content="Account Name" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Width="144" Foreground="#FF8EB9BF"/>
         <TextBox x:Name="AccName" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
-        <Button Content="Complete Purchase" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="90,270,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click2"/>
+        <Button Content="Complete Purchase" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="120,270,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click2"/>
         <Button Content="Previous" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
 
         <Grid x:Name="grid1" DataContext="{StaticResource contactInfoViewSource}" HorizontalAlignment="Left" Margin="0,198,0,0" VerticalAlignment="Top" TextElement.Foreground="#6eb9bf">

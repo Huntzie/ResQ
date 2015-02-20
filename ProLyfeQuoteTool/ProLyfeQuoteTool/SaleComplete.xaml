@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProLyfeQuoteTool" x:Class="ProLyfeQuoteTool.SaleComplete" 
       mc:Ignorable="d"
-	Title="SaleComplete" Height="353.023" Width="731.34">
+	Title="SaleComplete" Height="353.023">
 
     <Page.Resources>
         <local:DataSet1 x:Key="dataSet1"/>
@@ -13,7 +13,7 @@
     </Page.Resources>
 
     <Grid DataContext="{StaticResource purchaseView1ViewSource}">
-        <DataGrid x:Name="purchaseView1DataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource purchaseView1ViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="purchaseView1DataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource purchaseView1ViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Background="{x:Null}" GridLinesVisibility="None" HeadersVisibility="Column" RowHeaderWidth="0" BorderBrush="{x:Null}" Foreground="#FF8EB9BF" ColumnHeaderStyle="{StaticResource datagridColumnStyle}" RowStyle="{StaticResource datagridRowStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader"/>

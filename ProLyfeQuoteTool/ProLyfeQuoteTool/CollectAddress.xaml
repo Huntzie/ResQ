@@ -3,9 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="300"
-	Title="CollectAddress" Width="313.364">
+      mc:Ignorable="d"
+	Title="CollectAddress" Width="319.364" Height="312">
 
     <Grid Loaded="Grid_Loaded" Margin="0,0,20,20">
         <Label Content="Address Form" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
@@ -16,10 +15,10 @@
         <Label Content="Post Code" HorizontalAlignment="Left" Margin="23,181,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
         <TextBox x:Name="PostCode" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="23,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="121"/>
         <Label Content="Address Type" HorizontalAlignment="Left" Margin="170,181,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <ComboBox x:Name="AddType" HorizontalAlignment="Left" Margin="170,212,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="NextButton" Content="Next" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
+        <ComboBox x:Name="AddType" HorizontalAlignment="Left" Margin="170,212,0,0" VerticalAlignment="Top" Width="120" Style="{DynamicResource comboBoxStyle}"/>
+        <Button x:Name="NextButton" Content="Next" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="223,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
         <Button x:Name="PrevButton" Content="Previous" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
         <Label x:Name="Warning" Content="! Please fill in all boxes" Margin="83,244,80,10" VerticalAlignment="Center" Foreground="Red" Visibility="Hidden"/>
-        <Button x:Name="Clear"  Content="Add Another Address" HorizontalAlignment="Left" Margin="90,270,0,0" VerticalAlignment="Top" Width="128" Click="Clear_Click"/>
+        <Button x:Name="Clear"  Content="Add Another Address" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="90,270,0,0" VerticalAlignment="Top" Width="128" Click="Clear_Click"/>
     </Grid>
 </Page>
