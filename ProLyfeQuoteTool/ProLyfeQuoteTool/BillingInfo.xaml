@@ -6,25 +6,25 @@
       xmlns:local="clr-namespace:ProLyfeQuoteTool" x:Class="ProLyfeQuoteTool.BillingInfo" 
       mc:Ignorable="d" 
       d:DesignHeight="300"
-	Title="BillingInfo" Width="491">
+	Title="BillingInfo" Width="295">
 
     <Page.Resources>
         <local:DataSet1 x:Key="dataSet1"/>
         <CollectionViewSource x:Key="contactInfoViewSource" Source="{Binding ContactInfo, Source={StaticResource dataSet1}}"/>
     </Page.Resources>
 
-    <Grid Background="White">
-        <Label Content="Billing Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="144"/>
-        <Label Content="Sort Code" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="144"/>
-        <TextBox x:Name="SortCode" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
-        <Label Content="Account Number" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="144"/>
-        <TextBox x:Name="AccNum"  HorizontalAlignment="Left" Height="23" Margin="10,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
-        <Label Content="Account Name" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Width="144"/>
-        <TextBox x:Name="AccName" HorizontalAlignment="Left" Height="23" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
-        <Button Content="Complete Purchase" HorizontalAlignment="Left" Margin="279,270,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click2"/>
-        <Button Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
+    <Grid HorizontalAlignment="Left" Width="295" Margin="0,0,20,20">
+        <Label Content="Billing Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="144" Foreground="#FF8EB9BF"/>
+        <Label Content="Sort Code" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="144" Foreground="#FF8EB9BF"/>
+        <TextBox x:Name="SortCode" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <Label Content="Account Number" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="144" Foreground="#FF8EB9BF"/>
+        <TextBox x:Name="AccNum" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="10,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <Label Content="Account Name" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top" Width="144" Foreground="#FF8EB9BF"/>
+        <TextBox x:Name="AccName" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+        <Button Content="Complete Purchase" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="90,270,0,0" VerticalAlignment="Top" Width="196" Click="Button_Click2"/>
+        <Button Content="Previous" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
 
-        <Grid x:Name="grid1" DataContext="{StaticResource contactInfoViewSource}" HorizontalAlignment="Left" Margin="0,198,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" DataContext="{StaticResource contactInfoViewSource}" HorizontalAlignment="Left" Margin="0,198,0,0" VerticalAlignment="Top" TextElement.Foreground="#6eb9bf">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
