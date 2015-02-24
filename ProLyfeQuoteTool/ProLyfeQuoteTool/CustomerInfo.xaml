@@ -10,12 +10,12 @@
     <Grid Margin="0,0,20,20">
         <Label Content="Customer Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="Name" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="67,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="23" Margin="67,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True"/>
         <Label Content="CLI" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="CLI" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="67,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox x:Name="CLI" HorizontalAlignment="Left" Height="23" Margin="67,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="Email" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="67,134,0,0" Text="" VerticalAlignment="Top" IsReadOnly="True"/>
-        <Button Content="Next" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="67,134,0,0" Text="" VerticalAlignment="Top" IsReadOnly="True"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="215,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Page>

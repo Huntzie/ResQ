@@ -1,85 +1,12 @@
-﻿<NavigationWindow x:Class="ProLyfeQuoteTool.MainWindow"
+﻿<src:MetroWindow x:Class="ProLyfeQuoteTool.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ProLyfe Quote Tool" Height="393.273" Width="653.545" Source="CustomerInfo.xaml" SizeToContent="WidthAndHeight" Style="{DynamicResource MetroWindowStyle}" AllowsTransparency="True" WindowStyle="None">
+        xmlns:src="clr-namespace:ProLyfeQuoteTool"
+        Title="ProLyfe Quote Tool" Height="393.273" Width="653.545" SizeToContent="WidthAndHeight" Style="{DynamicResource MetroWindowStyle}">
+    <Grid>
+        <DockPanel>
+            <Frame x:Name="NavigationFrame" NavigationUIVisibility="Hidden"/>
+        </DockPanel>
+    </Grid>
     
-    <Window.Resources>
-        <Style x:Key="MetroWindowStyle" TargetType="{x:Type Window}">
-            <Setter Property="Foreground" Value="#FF8eb9bf"/>
-            <Setter Property="Background" Value="#FF151818"/>
-            <Setter Property="WindowStyle" Value="None" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Window}">
-                        <Grid>
-                            <Border x:Name="MainBorder" BorderThickness="0" Background="#FF151818">
-                                <DockPanel LastChildFill="True">
-                                    <Border x:Name="Part_TITLEBAR" Margin="0,0,0,0" Height="40" DockPanel.Dock="Top" Background="Transparent" MouseLeftButtonDown="PART_TITLEBAR_MouseLeftButtonDown">
-                                        <DockPanel LastChildFill="False">
-                                            <TextBlock Margin="10,0,0,4" VerticalAlignment="Center" Foreground="#8EB9BF" TextWrapping="NoWrap" Text="{TemplateBinding Title}" FontSize="16"/>
-                                            <Button x:Name="PART_CLOSE" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="5" Height="20" Width="20" Style="{DynamicResource MetroWindowButtonStyle}" Click="PART_CLOSE_Click" Content="r" FontFamily="Marlett" FontSize="16"/>
-                                            <Button x:Name="PART_MAXIMISE_RESTORE" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="20" Width="20" Style="{DynamicResource MetroWindowButtonStyle}" Click="PART_MAXIMISE_RESTORE_Click" Content="1" FontFamily="Marlett" FontSize="16"/>
-                                            <Button x:Name="PART_MINIMISE" DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Height="20" Width="20" Style="{DynamicResource MetroWindowButtonStyle}" Click="PART_MINIMISE_Click" VerticalContentAlignment="Bottom" Content="0" FontFamily="Marlett" FontSize="16"/>
-                                        </DockPanel>
-                                    </Border>
-
-                                    <AdornerDecorator DockPanel.Dock="Bottom">
-                                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}"/>
-                                    </AdornerDecorator>
-                                </DockPanel>
-                            </Border>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="MetroWindowButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle">
-                <Setter.Value>
-                    <Style>
-                        <Setter Property="Control.Template">
-                            <Setter.Value>
-                                <ControlTemplate>
-                                    <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Background" Value="{x:Null}"/>
-            <Setter Property="BorderBrush" Value="#FF151818"/>
-            <Setter Property="Foreground" Value="#FF8eb9bf"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="True">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#FF2A2F30"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF222526"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#FF1E2223"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF151D1E"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Background" TargetName="border" Value="#FFADB2B5"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF353C3D"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-</NavigationWindow>
+</src:MetroWindow>

@@ -18,24 +18,24 @@
     <Grid Margin="0,2,20,20" DataContext="{StaticResource vw_QuoteViewSource}">
         <Label Content="Quote Request" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
         <Label Content="Dress Cost" HorizontalAlignment="Left" Margin="12,43,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="tb_dressCost" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="96,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent">           
+        <TextBox x:Name="tb_dressCost" HorizontalAlignment="Left" Height="23" Margin="96,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent">           
         </TextBox>
         <Label Content="Venue Cost" Margin="12,71,0,0" HorizontalAlignment="Left" Width="70" Height="26" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="tb_venueCost" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="96,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
+        <TextBox x:Name="tb_venueCost" HorizontalAlignment="Left" Height="23" Margin="96,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
         <Label Content="Catering Cost" HorizontalAlignment="Left" Margin="12,99,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="tb_cateringCost" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="96,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
-        <Button x:Name="b_quoteReqQuote" Content="Quote" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="306,99,0,0" VerticalAlignment="Top" Width="155" Click="b_quoteReqQuote_Click"/>
-        <Button x:Name="b_QuoteReqPrevious" Content="Previous" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqPrevious"/>
-        <Button Name="b_goPurchase" Content="Go to Purchase" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="363,291,0,0" VerticalAlignment="Top" Width="98" Click="b_goPurchase_Click"/>
-        <DatePicker Name="dtp_startDate" HorizontalAlignment="Left" Margin="338,47,0,0" VerticalAlignment="Top" Width="123" SelectedDateChanged="dtp_startDate_SelectedDateChanged" DisplayDateStart="{x:Static sys:DateTime.Now}" DisplayDate="{x:Static sys:DateTime.Now}"/>
+        <TextBox x:Name="tb_cateringCost" HorizontalAlignment="Left" Height="23" Margin="96,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="NumbersOnlyPreviewTextEvent"/>
+        <Button x:Name="b_quoteReqQuote" Content="Quote" HorizontalAlignment="Left" Margin="306,99,0,0" VerticalAlignment="Top" Width="155" Click="b_quoteReqQuote_Click"/>
+        <Button x:Name="b_QuoteReqPrevious" Content="Previous" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="75" Click="b_quoteReqPrevious"/>
+        <Button Name="b_goPurchase" Content="Go to Purchase" HorizontalAlignment="Left" Margin="363,291,0,0" VerticalAlignment="Top" Width="98" Click="b_goPurchase_Click"/>
+        <DatePicker Name="dtp_startDate" HorizontalAlignment="Left" Margin="338,47,0,0" VerticalAlignment="Top" Width="123" SelectedDateChanged="dtp_startDate_SelectedDateChanged" DisplayDateStart="{x:Static sys:DateTime.Now}" DisplayDate="{x:Static sys:DateTime.Now}" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Label Content="Payment Start Date" HorizontalAlignment="Left" Margin="221,45,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <DataGrid x:Name="quotesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource quotesViewSource}}" Margin="10,131,0,35" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" HorizontalAlignment="Left" Width="451" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF8EB9BF" HeadersVisibility="Column" RowHeaderWidth="0" GridLinesVisibility="None" ColumnHeaderStyle="{StaticResource datagridColumnStyle}" RowStyle="{StaticResource datagridRowStyle}">
+        <DataGrid x:Name="quotesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource quotesViewSource}}" Margin="10,131,0,35" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" HorizontalAlignment="Left" Width="451" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF8EB9BF" HeadersVisibility="Column" RowHeaderWidth="0" GridLinesVisibility="None">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="SizeToHeader"/>                
-                <DataGridTextColumn x:Name="dressCostColumn" Binding="{Binding DressCost}" Header="Dress Cost" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="venueCostColumn" Binding="{Binding VenueCost}" Header="Venue Cost" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="cateringCostColumn" Binding="{Binding CateringCost}" Header="Catering Cost" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="monthlyPremiumColumn" Binding="{Binding MonthlyPremium}" Header="Monthly Premium" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID"/>                
+                <DataGridTextColumn x:Name="dressCostColumn" Binding="{Binding DressCost}" Header="Dress Cost"/>
+                <DataGridTextColumn x:Name="venueCostColumn" Binding="{Binding VenueCost}" Header="Venue Cost"/>
+                <DataGridTextColumn x:Name="cateringCostColumn" Binding="{Binding CateringCost}" Header="Catering Cost"/>
+                <DataGridTextColumn x:Name="monthlyPremiumColumn" Binding="{Binding MonthlyPremium}" Header="Monthly Premium"/>
                 <DataGridTextColumn x:Name="startDateColumn" Header="Start Date" Width="SizeToHeader" Binding="{Binding StartDate, StringFormat=d}"/>                
             </DataGrid.Columns>
         </DataGrid>

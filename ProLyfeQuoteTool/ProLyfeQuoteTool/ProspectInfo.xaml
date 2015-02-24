@@ -22,16 +22,16 @@
         <Label Content="Home Number" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
         <Label Content="Mobile Number" HorizontalAlignment="Left" Margin="9,165,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
         <Label Content="Work Number" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="FirstName" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="159,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="LastName" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="159,76,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="HomeNumber" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="159,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="MobileNumber" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="159,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="WorkNumber" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="159,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Email" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="314,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="161"/>
-        <Button Content="Next" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="400,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
-        <Button Content="Previous" Style="{StaticResource buttonStyle}" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Height="23" Margin="159,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LastName" HorizontalAlignment="Left" Height="23" Margin="159,76,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="HomeNumber" HorizontalAlignment="Left" Height="23" Margin="159,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MobileNumber" HorizontalAlignment="Left" Height="23" Margin="159,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="WorkNumber" HorizontalAlignment="Left" Height="23" Margin="159,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="314,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="161"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="400,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
+        <Button Content="Previous" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click1"/>
         <Label Content="Lead Full Name" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top" Width="161" Height="26" Foreground="#FF8EB9BF"/>
-        <TextBox x:Name="FullName" Style="{StaticResource textboxStyle}" HorizontalAlignment="Left" Height="23" Margin="314,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="FullName" HorizontalAlignment="Left" Height="23" Margin="314,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="161"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="314,76,0,0" VerticalAlignment="Top" Width="161" Foreground="#FF8EB9BF"/>
         <DatePicker x:Name ="DOB" HorizontalAlignment="Left" Margin="159,106,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="Warning" Content="! Please fill in all boxes" Margin="159,239,0,0" VerticalAlignment="Center" Foreground="Red" Visibility="Hidden" HorizontalAlignment="Left"/>

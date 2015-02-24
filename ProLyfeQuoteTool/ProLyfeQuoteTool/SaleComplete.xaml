@@ -13,35 +13,22 @@
     </Page.Resources>
 
     <Grid DataContext="{StaticResource purchaseView1ViewSource}">
-        <DataGrid x:Name="purchaseView1DataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource purchaseView1ViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Background="{x:Null}" GridLinesVisibility="None" HeadersVisibility="Column" RowHeaderWidth="0" BorderBrush="{x:Null}" Foreground="#FF8EB9BF" ColumnHeaderStyle="{StaticResource datagridColumnStyle}" RowStyle="{StaticResource datagridRowStyle}">
+        <DataGrid x:Name="purchaseView1DataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource purchaseView1ViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Background="{x:Null}" GridLinesVisibility="None" HeadersVisibility="Column" RowHeaderWidth="0" BorderBrush="{x:Null}" Foreground="#FF8EB9BF">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="dOBColumn" Header="DOB" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding DOB, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="line1Column" Binding="{Binding Line1}" Header="Line 1" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="line2Column" Binding="{Binding Line2}" Header="Line 2" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="postcodeColumn" Binding="{Binding Postcode}" Header="Postcode" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="accountNumColumn" Binding="{Binding AccountNum}" Header="Account Num" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="accountNameColumn" Binding="{Binding AccountName}" Header="Account Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="sortCodeColumn" Binding="{Binding SortCode}" Header="Sort Code" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="dressCostColumn" Binding="{Binding DressCost}" Header="Dress Cost" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="venueCostColumn" Binding="{Binding VenueCost}" Header="Venue Cost" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="cateringCostColumn" Binding="{Binding CateringCost}" Header="Catering Cost" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="monthlyPremiumColumn" Binding="{Binding MonthlyPremium}" Header="Monthly Premium" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="startDateColumn" Header="Start Date" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="First Name"/>
+                <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Last Name"/>
+                <DataGridTextColumn x:Name="DOBcolumn" Binding="{Binding DOB, StringFormat=d}" Header="DOB"/>                              
+                <DataGridTextColumn x:Name="line1Column" Binding="{Binding Line1}" Header="Line 1"/>
+                <DataGridTextColumn x:Name="line2Column" Binding="{Binding Line2}" Header="Line 2"/>
+                <DataGridTextColumn x:Name="postcodeColumn" Binding="{Binding Postcode}" Header="Postcode"/>
+                <DataGridTextColumn x:Name="accountNumColumn" Binding="{Binding AccountNum}" Header="Account Num"/>
+                <DataGridTextColumn x:Name="accountNameColumn" Binding="{Binding AccountName}" Header="Account Name"/>
+                <DataGridTextColumn x:Name="sortCodeColumn" Binding="{Binding SortCode}" Header="Sort Code"/>
+                <DataGridTextColumn x:Name="dressCostColumn" Binding="{Binding DressCost}" Header="Dress Cost"/>
+                <DataGridTextColumn x:Name="venueCostColumn" Binding="{Binding VenueCost}" Header="Venue Cost"/>
+                <DataGridTextColumn x:Name="cateringCostColumn" Binding="{Binding CateringCost}" Header="Catering Cost"/>
+                <DataGridTextColumn x:Name="monthlyPremiumColumn" Binding="{Binding MonthlyPremium}" Header="Monthly Premium"/>
+                <DataGridTextColumn x:Name="startDateColumn" Binding="{Binding StartDate, StringFormat=d}" Header="Start Date"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

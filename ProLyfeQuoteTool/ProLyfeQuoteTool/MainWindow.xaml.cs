@@ -18,11 +18,13 @@ namespace ProLyfeQuoteTool
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            NavigationFrame.Navigate(new CustomerInfo());
         }
 
         private void PART_CLOSE_Click(object sender, RoutedEventArgs e)
